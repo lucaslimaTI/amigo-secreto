@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,900;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+#numeros-sorteados2{
+    display: none;
+}
+.header{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 20px;
+    background: #ffb341;
+    color: #f7f7f7;
+}
+.card-sorteio{
+    margin-top: 50px;
+    padding: 20px;
+    display: inline-block;
+    color: #ffb341 ;
+    background: #3e5baa;
+    padding-left: 60px;
+    border-radius: 20px;
+    border-right: 6px solid #d69b42;
+    padding-right: 60px;
+}
+.label-add{
+    padding: 0;
+    display: block;
+    margin-top: 10px;
+    color: #ffbb54;
+}
+.div-titulo{
+    color: #fff;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.organiza-dados{
+    text-align: left;
+}
+.label-add{
+    font-size: 22px;
+}
+.btn-add{
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffbe5d;
+    color: #3a78ff;
+    border-radius: 64px;
+    margin-left: 18px;
+}
+.btn-add:hover{
+    transition: 0.2s;
+    box-shadow: 0px 0px 10px #0e2e86;
+    background: #ffc670;
+    color: #506bb6;
+}
+#teste{
+    text-overflow: ellipsis;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 18px;
+    color: #e9e9e9;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background:#597ddf ;
+    border-radius:60px;
+    box-shadow: 0px 0px 10px #233e88;
+    padding-left: 24px;
+    letter-spacing: 2px;
+    width: 300px;
+    font-weight: 550;
+}
+#teste::placeholder{
+    color: #e9e9e9;
+    font-weight: 550;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.btn-sortear{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 40px;
+    width: 100%;
+    padding: 14px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 46px;
+    background: #ffbe5d;
+    color: #0059ff;
+    text-shadow: 0px 0px 6px #ffd79c;
+    box-shadow: 0px 0px 10px #162d6b;
+}
+.nome-sorteado{
+    margin-top: 50px;
+    padding: 20px;
+    display: inline-block;
+    color: #ffc061 ;
+    background: #3e5baa;
+    padding-left: 60px;
+    border-radius: 20px;
+    border-right: 6px solid #d69b42;
+    padding-right: 60px;
+    font-weight: 550;
+}
+.btn-listaNomes{
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #ffbe5d;
+    color: #3a78ff;
+    border-radius: 64px;
+    margin-left: 10px;
+}
+.btn-pedidos{
+    padding: 15px;
+    border: 2px solid #ffbe5d;
+    outline: none;
+    cursor: pointer;
+    background: #3a78ff00;
+    color: #ffbe5d;
+    border-radius: 64px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+/*CONFIGURAÇOES RESPONSIVAS*/
+@media(max-width: 500px) {
+    .nome-sorteado{
+        margin-top: 50px;
+        padding: 20px;
+        display: inline-block;
+        color: #ffc061 ;
+        background: #3e5baa;
+        padding-left: 40px;
+        border-radius: 20px;
+        border-right: 6px solid #d69b42;
+        padding-right: 40px;
+        font-weight: 550;
+    }
+    .btn-listaNomes{
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #ffbe5d;
+        color: #3a78ff;
+        border-radius: 64px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .btn-sortear{
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 800;
+        margin-top: 40px;
+        width: 100%;
+        padding: 14px;
+        letter-spacing: 3px;
+        border: none;
+        border-radius: 46px;
+        background: #ffbe5d;
+        color: #0059ff;
+        text-shadow: 0px 0px 6px #ffd79c;
+        box-shadow: 0px 0px 10px #162d6b;
+    }
+    .btn-pedidos{
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #ffbe5d;
+        color: #3a78ff;
+        border-radius: 64px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .card-sorteio{
+        margin-top: 50px;
+        padding: 40px;
+        display: inline-block;
+        color: #ffb341 ;
+        background: #3e5baa;
+        padding-left: 40px;
+        border-radius: 20px;
+        border-right: 6px solid #d69b42;
+        padding-right: 80px;
+        width: 250px;
+    }
+    #teste{
+        text-overflow: ellipsis;
+        font-weight: 500;
+        margin-top: 10px;
+        padding: 18px;
+        color: #e9e9e9;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        background:#597ddf ;
+        border-radius:60px;
+        box-shadow: 0px 0px 10px #233e88;
+        padding-left: 24px;
+        letter-spacing: 2px;
+        width: 100%;
+        font-weight: 550;
+    }
+}
+@media(max-width: 380px) {
+    .label-add{
+        font-size: 18px;
+    }
+    .nome-sorteado{
+        margin-top: 26px;
+        padding: 20px;
+        display: inline-block;
+        color: #ffc061 ;
+        background: #3e5baa;
+        padding-left: 15px;
+        border-radius: 20px;
+        border-right: 6px solid #d69b42;
+        padding-right: 15px;
+        font-weight: 550;
+    }
+    .btn-listaNomes{
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #ffbe5d;
+        color: #3a78ff;
+        border-radius: 64px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .btn-sortear{
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 800;
+        margin-top: 40px;
+        width: 100%;
+        padding: 14px;
+        letter-spacing: 3px;
+        border: none;
+        border-radius: 46px;
+        background: #ffbe5d;
+        color: #0059ff;
+        text-shadow: 0px 0px 6px #ffd79c;
+        box-shadow: 0px 0px 10px #162d6b;
+    }
+    .card-sorteio{
+        margin-top: 20px;
+        padding: 40px;
+        display: inline-block;
+        color: #ffb341 ;
+        background: #3e5baa;
+        padding-left: 40px;
+        border-radius: 20px;
+        border-right: 6px solid #d69b42;
+        padding-right: 80px;
+        width: 230px;
+    }
+    #teste{
+        text-overflow: ellipsis;
+        font-weight: 500;
+        margin-top: 10px;
+        padding: 18px;
+        color: #e9e9e9;
+        font-size: 14px;
+        outline: none;
+        border: none;
+        background:#597ddf ;
+        border-radius:60px;
+        box-shadow: 0px 0px 10px #233e88;
+        padding-left: 24px;
+        letter-spacing: 2px;
+        width: 100%;
+        font-weight: 550;
+    }
+}
+@media(max-width: 380px) {
+    .card-sorteio{
+        margin-top: 20px;
+        padding: 20px;
+        display: inline-block;
+        color: #ffb341 ;
+        background: #3e5baa;
+        padding-left: 20px;
+        border-radius: 20px;
+        border-right: 6px solid #d69b42;
+        padding-right: 20px;
+        width: 200px;
+    }
+    .card-sorteio h2{
+    font-size: 22px;
+    }
+    #teste::placeholder{
+    font-size: 12PX;
+    }
+    #teste{
+        width: 160px;
+    font-size: 12px;
+    }
+    .nome-sorteado{
+        width: 205px;
+    }
+}

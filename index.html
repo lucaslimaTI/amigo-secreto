@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de desejos</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./lista de desejo/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header"><h3>LISTA DE DESEJOS DO AMIGO SECRETO</h3></div>
+    <div id="conteudoPedidos" class="conteudo">
+        <div class="topo">
+            <input type="text" name="" id="inputNovaTarefa" placeholder="Adicionar um novo desejo:">
+            <button id="btnAddTarefa">
+                <i class="fa fa-plus"></i>
+            </button><br>
+            
+            
+        </div>
+        <button onclick="restaurarDados();" class="fa fa-refresh btn-resetar"></button>
+        <button onclick="ir_paraSorteio();" class="btn-paginaSorteio">IR PARA O SORTEIO DE NOMES &#10142;</button> 
+        <ul id="listaTarefas">
+            
+        </ul>
+    </div>
+    <div class="conteudo-email2">
+            <button class="btn-enviarEmail" onclick="exibir_conteudoConvite();" >CONVIDAR AMIGOS <i class="fa fa-user-plus"></i></button>
+    </div>
+    <div class="conteudo-email" id="conteudo-convite">
+        <div class="div-enviar-email">
+            <div class="alinhar-email" >
+                <form>
+                    <label for="" class="label-email">Digite o email do destinatario:*</label>
+                    <input type="email" required class="email-destino" name="" id="id-email" placeholder="exemploemail@email.com"> <br>
+                    <textarea name="" id="meuTexto" class="texto-email" cols="30" rows="10" placeholder="Digite uma mensagem para enviar para a pessoa:"></textarea>
+                    <button  class="enviar-convite" onclick="enviarEmail();"><i class="fa fa-envelope btn-enviarConvite"></i>ENVIAR CONVITE </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="janelaEdicao" >
+        <button id="janelaEdicaoBtnFechar">
+            <i class="fa fa-remove"></i>
+        </button>
+        <h2 id="idTarefaEdicao" ></h2>
+        <hr>
+        <form>
+            <div class="frm-linha">
+                <label for="nome">Nome</label>
+                <input type="text" id="inputTarefaNomeEdicao" placeholder="Digite a nova mudança:">
+            </div>
+            <div class="frm-linha">
+                <button id="btnAtualizarTarefa">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div id="janelaEdicaoFundo"></div>
+
+    <script src="./lista de desejo/js/index.js">
+
+    </script>
+    <script>
+        function exibir_conteudoConvite(){
+            document.getElementById("conteudo-convite").style.visibility = "visible";
+        }
+        var email;
+        
+        function enviarEmail() {
+
+                email = document.getElementById('id-email').value;
+                var link = "mailto:" + email
+                + "?cc="
+                + "&subject=" + escape('LINK PARA PARTICIPAR: \n' + document.getElementById('meuTexto').value)
+                + "&body=" + escape('LINK PARA PARTICIPAR: \n' + document.getElementById('meuTexto').value);
+
+                    document.querySelector('#id-email').value = '';
+                    document.querySelector("#meuTexto").value = '';
+                    window.location.href = link;
+                    
+            }
+    </script>
+    <script>
+        var dadosPedidos = localStorage.getItem('SPedidos');
+        document.querySelector('#listaTarefas').innerHTML = dadosPedidos;
+        function restaurarDados() {
+            localStorage.removeItem('SPedidos');
+            window.location.reload();
+        }
+        function ir_paraSorteio(){
+            var conteudoPagina = document.getElementById('listaTarefas').innerHTML;
+            localStorage.setItem('SPedidos', conteudoPagina);
+            location.href = "./sortear nomes/sorteio.html";
+        }
+    </script>
+ <!--
+    <li>
+                <span class="textoTarefa">Tarefa 1</span>
+                <div>
+                    <button class="btnAcao">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <button class="btnAcao">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </div>
+            </li>
+ -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear Nome</title>
+    <link rel="stylesheet" href="sorteio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head> 
+<body>
+    <div class="header"><h3>SORTEADOR DE NOMES</h3></div>
+    <div class="container">
+        <div class="card-sorteio">
+        <div class="div-titulo">
+            <h2>Sortear Nomes</h2>
+        </div>
+            <!--<input type="text" name="" id="num-sorteado"> <br>-->
+            <div class="organiza-dados">
+                <label for="" class="label-add">Digite os nomes que deseja adicionar*</label>
+                <input type="text" name="" id="teste" placeholder="Digite o nome aqui:"> 
+                <button onclick="adicionar();" class="fa fa-plus btn-add" class=""></button> 
+                <button onclick="mostrarNomes();" class="fa fa-list btn-listaNomes"></button>
+                <button onclick="pedidos();" class="fa fa-bookmark-o btn-pedidos" class=""></button> <br>
+            <button onclick="sortear();" class="btn-sortear">SORTEAR</button>
+            
+            <input type="text" name="" id="numeros-sorteados2">
+            <div id="numeros-sorteados" class="numeros-sorteados">
+
+            </div>
+        </div>
+        </div> <br>
+        <div id="nome-sorteado" class="nome-sorteado">
+                	&#10142; NOMES SORTEADOS APARECERÃO AQUI
+        </div>
+    </div>
+
+    <div id="res"></div>
+    <script>
+        function pedidos(){
+            location.href = "../index.html"
+        }
+        /*var numeros = [];
+        
+        function numeros_aleatorios(){
+            while (numeros.lenght)
+            {
+                var aleatorios = Math.floor(Math.random() * 10);
+
+                if ( numeros.indexOf(aleatorios) == -1)
+                numeros.push(aleatorios);
+            }
+            alert(aleatorios);
+        }*/
+    </script>
+    <script>
+        /*
+        var estados = ["Lucas", 'Leo', 'Felipe', 'Charlles'];
+        var r = Math.floor(Math.random() * estados.length);
+        
+        var buscar = estados[r];
+var indice = estados.indexOf(buscar);
+while(indice >= 0){
+    estados.splice(indice, 1);
+    indice = estados.indexOf(buscar);
+}
+console.log(estados);
+*/
+    </script>
+<script>
+    
+        var nomes = ['Carlos', 'Raphael', 'Lucas', 'Breno', 'Joao','Ismael', 'Leo', 'Felipe', 'Charlles', 'Moreira'];
+        var nomes_adicionados = [];
+        var cont;
+        
+
+        function adicionar(){
+            var teste = document.getElementById('teste').value;
+            nomes_adicionados.push(teste);
+            /*alert(nomes_adicionados);*/
+            document.querySelector('#teste').value = '';
+            document.querySelector('#nome-sorteado').innerHTML = ('&#10142; NOMES SORTEADOS APARECERÃO AQUI');
+        }
+
+    function sortear()
+    {
+        
+        var x = Math.floor(Math.random() * nomes.length);
+        var y = Math.floor(Math.random() * nomes_adicionados.length);
+        document.querySelector('#numeros-sorteados2').value =  ('ESCOLHIDOS ' + x);
+        document.querySelector('#nome-sorteado').innerHTML = ('PESSOA SORTEADA: '+ nomes_adicionados[y]);
+        if(nomes_adicionados[y] == null)
+        {
+            document.querySelector('#nome-sorteado').innerHTML = ('JA FORAM SORTEADOS TODOS OS NOMES!');
+        }
+
+        var buscar = nomes_adicionados[y]
+        var indice = nomes_adicionados.indexOf(buscar);
+        while(indice >= 0)
+        {
+            nomes_adicionados.splice(indice, 1);
+            indice = nomes_adicionados.indexOf(buscar);
+        }      
+    }   
+    function mostrarNomes(){
+        alert('Nomes para sortear: ' + nomes_adicionados);
+    }
+    console.log(nomes_adicionados);
+</script>
+</body>
+</html>
